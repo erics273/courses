@@ -17,17 +17,17 @@ async function populateTable() {
     let tbody = document.querySelector("#courseTableBody")
 
     //loop over all the courses and work with a single course
-    courses.forEach((course)=>{
+    courses.forEach((course) => {
         //call a function to build the row
         //pass it where the row goes (tbody)
         //pass it what goes in the row (data/course)
-        buildRow(tbody,course)
+        buildRow(tbody, course)
     })
 
 }
 
 //the function that takes a table body and some data and puts the data in the table body
-function buildRow(someTableBody, someData){
+function buildRow(someTableBody, someData) {
 
     //create the row for the table
     let row = someTableBody.insertRow();
@@ -46,6 +46,13 @@ function buildRow(someTableBody, someData){
     let courseNameCell = row.insertCell();
     //put the relevent course data in the
     courseNameCell.innerHTML = someData.courseName;
+
+    //crate the cell for the course name
+    let courseDetailsCell = row.insertCell();
+    //put the relevent course data in the
+    courseDetailsCell.innerHTML = `
+        <a href="./details.html?courseid=${someData.id}">Show Details</a>
+    `;
 
 }
 
