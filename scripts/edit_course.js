@@ -96,8 +96,10 @@ const updateACourse = async (event) => {
 
         //put the comments in the console
       //  console.log(updatedCourse)
-
-        window.location.href = "./index.html"
+        if(response.ok){
+            window.location.href = "./index.html"
+        }
+        
 
     } catch (err) {
 
