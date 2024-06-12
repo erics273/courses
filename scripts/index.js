@@ -47,11 +47,19 @@ function buildRow(someTableBody, someData) {
     //put the relevent course data in the
     courseNameCell.innerHTML = someData.courseName;
 
-    //crate the cell for the course name
+    //create the cell for the course name
     let courseDetailsCell = row.insertCell();
     //put the relevent course data in the
     courseDetailsCell.innerHTML = `
         <a href="./details.html?courseid=${someData.id}">Show Details</a>
+    `;
+
+    //create the cell for the admin stuff
+    let adminStuffCell = row.insertCell();
+    //put the relevent course data in the
+    adminStuffCell.innerHTML = `
+        <a href="./edit_course.html?courseid=${someData.id}">Edit Course</a> &nbsp; &nbsp;
+        <a href="./delete_course.html?courseid=${someData.id}">Delete Course</a>
     `;
 
 }
